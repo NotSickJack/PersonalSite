@@ -42,37 +42,37 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(22px, 9999px, 25px, 0);
+    clip: rect(53px, 9999px, 15px, 0);
   }
   10% {
-    clip: rect(18px, 9999px, 65px, 0);
+    clip: rect(11px, 9999px, 50px, 0);
   }
   20% {
-    clip: rect(82px, 9999px, 6px, 0);
+    clip: rect(29px, 9999px, 11px, 0);
   }
   30% {
-    clip: rect(34px, 9999px, 98px, 0);
+    clip: rect(83px, 9999px, 15px, 0);
   }
   40% {
-    clip: rect(62px, 9999px, 90px, 0);
+    clip: rect(81px, 9999px, 39px, 0);
   }
   50% {
-    clip: rect(45px, 9999px, 13px, 0);
+    clip: rect(39px, 9999px, 16px, 0);
   }
   60% {
-    clip: rect(97px, 9999px, 69px, 0);
+    clip: rect(50px, 9999px, 81px, 0);
   }
   70% {
-    clip: rect(47px, 9999px, 3px, 0);
+    clip: rect(62px, 9999px, 94px, 0);
   }
   80% {
-    clip: rect(35px, 9999px, 17px, 0);
+    clip: rect(78px, 9999px, 81px, 0);
   }
   90% {
-    clip: rect(76px, 9999px, 33px, 0);
+    clip: rect(98px, 9999px, 24px, 0);
   }
   100% {
-    clip: rect(51px, 9999px, 66px, 0);
+    clip: rect(32px, 9999px, 84px, 0);
   }
 }
 .glitching:after {
@@ -128,7 +128,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   height: 100vh;
   align-items: center;
-  padding: 20px;
+  margin: 20px;
+  padding-left: 80px;
 }
 .main-content p {
   font-size: 2rem;
