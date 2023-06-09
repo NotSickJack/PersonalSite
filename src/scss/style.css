@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+}
+
+body {
+  background-color: #141414;
+  color: #fff;
+}
+
+.glitching {
+  color: #ff1e00;
+  position: relative;
+  text-shadow: 0 1px black;
+}
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(22px, 9999px, 25px, 0);
+  }
+  10% {
+    clip: rect(18px, 9999px, 65px, 0);
+  }
+  20% {
+    clip: rect(82px, 9999px, 6px, 0);
+  }
+  30% {
+    clip: rect(34px, 9999px, 98px, 0);
+  }
+  40% {
+    clip: rect(62px, 9999px, 90px, 0);
+  }
+  50% {
+    clip: rect(45px, 9999px, 13px, 0);
+  }
+  60% {
+    clip: rect(97px, 9999px, 69px, 0);
+  }
+  70% {
+    clip: rect(47px, 9999px, 3px, 0);
+  }
+  80% {
+    clip: rect(35px, 9999px, 17px, 0);
+  }
+  90% {
+    clip: rect(76px, 9999px, 33px, 0);
+  }
+  100% {
+    clip: rect(51px, 9999px, 66px, 0);
+  }
+}
+.glitching:after {
+  content: attr(data-text);
+  position: absolute;
+  left: -1px;
+  text-shadow: 1px 0 black;
+  top: 0;
+  color: #ff1e00;
+  background: transparent;
+  overflow: hidden;
+  animation: noise-anim 1s infinite linear alternate-reverse;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #141414;
+}
+.flex li {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.flex a {
+  position: relative;
+}
+.flex a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000;
+  border-radius: 20px;
+  scale: 0.1;
+  transform-origin: right;
+  transition: scale 0.25s;
+}
+.flex a:hover::before {
+  scale: 1;
+  transform-origin: left;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  align-items: center;
+  padding: 20px;
+}
+.main-content p {
+  font-size: 2rem;
+}
+.main-content .highlight {
+  font-size: 2.5rem;
+}/*# sourceMappingURL=style.css.map */
