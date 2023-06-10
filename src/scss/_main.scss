@@ -1,6 +1,13 @@
 body{
     background-color: $background-color;
     color: #fff;
+    font-family: $fontRegular;
+}
+#canvas {
+    position:fixed;
+	opacity: 0.4;
+	background-color: #ffffff1a;
+	z-index: 20;
 }
 .glitching {
 
@@ -45,6 +52,7 @@ body{
     }
     a{
         position: relative;
+        font-family: $fontBold;
         }
     a::before{
         content: '';
@@ -77,5 +85,6 @@ body{
     }
     .highlight{
     font-size: 2.5rem;
+    font-family: $fontBold;
     }
 }

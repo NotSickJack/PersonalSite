@@ -29,9 +29,31 @@ input, textarea {
   outline: none;
 }
 
+@font-face {
+  font-family: "MainFontBold";
+  src: url("/PersonalSite/font/PPNeueMachina-InktrapBold.woff2") format("woff2"), url("/PersonalSite/font/PPNeueMachina-InktrapBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MainFontRegular";
+  src: url("/PersonalSite/font/PPNeueMachina-PlainRegular.woff2") format("woff2"), url("/PersonalSite/font/PPNeueMachina-PlainRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   background-color: #141414;
   color: #fff;
+  font-family: "MainFontRegular", sans-serif;
+}
+
+#canvas {
+  position: fixed;
+  opacity: 0.4;
+  background-color: rgba(255, 255, 255, 0.1019607843);
+  z-index: 20;
 }
 
 .glitching {
@@ -42,37 +64,37 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(53px, 9999px, 15px, 0);
+    clip: rect(73px, 9999px, 35px, 0);
   }
   10% {
-    clip: rect(11px, 9999px, 50px, 0);
+    clip: rect(27px, 9999px, 39px, 0);
   }
   20% {
-    clip: rect(29px, 9999px, 11px, 0);
+    clip: rect(60px, 9999px, 61px, 0);
   }
   30% {
-    clip: rect(83px, 9999px, 15px, 0);
+    clip: rect(54px, 9999px, 72px, 0);
   }
   40% {
-    clip: rect(81px, 9999px, 39px, 0);
+    clip: rect(48px, 9999px, 27px, 0);
   }
   50% {
-    clip: rect(39px, 9999px, 16px, 0);
+    clip: rect(100px, 9999px, 95px, 0);
   }
   60% {
-    clip: rect(50px, 9999px, 81px, 0);
+    clip: rect(21px, 9999px, 7px, 0);
   }
   70% {
-    clip: rect(62px, 9999px, 94px, 0);
+    clip: rect(90px, 9999px, 15px, 0);
   }
   80% {
-    clip: rect(78px, 9999px, 81px, 0);
+    clip: rect(49px, 9999px, 60px, 0);
   }
   90% {
-    clip: rect(98px, 9999px, 24px, 0);
+    clip: rect(76px, 9999px, 77px, 0);
   }
   100% {
-    clip: rect(32px, 9999px, 84px, 0);
+    clip: rect(85px, 9999px, 47px, 0);
   }
 }
 .glitching:after {
@@ -104,6 +126,7 @@ body {
 }
 .flex a {
   position: relative;
+  font-family: "MainFontBold", sans-serif;
 }
 .flex a::before {
   content: "";
@@ -136,4 +159,5 @@ body {
 }
 .main-content .highlight {
   font-size: 2.5rem;
+  font-family: "MainFontBold", sans-serif;
 }/*# sourceMappingURL=style.css.map */

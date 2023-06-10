@@ -1,7 +1,29 @@
 $background-color: #141414;
-$bgColor:#333;
 $txtColor:#ff1e00;
 $txtBgColor:transparent;
-$glitchTime: 1s; //in seconds
+$glitchTime: 1s;
 $glitchSteps:10;
 $glitchColor: darken($txtColor,50%);
+
+@font-face {
+    font-family: 'MainFontBold';
+    src: url('/PersonalSite/font/PPNeueMachina-InktrapBold.woff2') format('woff2'),
+        url('/PersonalSite/font/PPNeueMachina-InktrapBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MainFontRegular';
+    src: url('/PersonalSite/font/PPNeueMachina-PlainRegular.woff2') format('woff2'),
+        url('/PersonalSite/font/PPNeueMachina-PlainRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$fontBold: 'MainFontBold', sans-serif;
+$fontRegular: 'MainFontRegular', sans-serif;
