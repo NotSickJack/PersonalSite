@@ -146,37 +146,37 @@ canvas {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(33px, 9999px, 76px, 0);
+    clip: rect(29px, 9999px, 24px, 0);
   }
   10% {
-    clip: rect(8px, 9999px, 85px, 0);
+    clip: rect(18px, 9999px, 85px, 0);
   }
   20% {
-    clip: rect(63px, 9999px, 31px, 0);
+    clip: rect(82px, 9999px, 93px, 0);
   }
   30% {
-    clip: rect(42px, 9999px, 15px, 0);
+    clip: rect(58px, 9999px, 76px, 0);
   }
   40% {
-    clip: rect(44px, 9999px, 70px, 0);
+    clip: rect(100px, 9999px, 6px, 0);
   }
   50% {
-    clip: rect(78px, 9999px, 34px, 0);
+    clip: rect(44px, 9999px, 97px, 0);
   }
   60% {
-    clip: rect(10px, 9999px, 19px, 0);
+    clip: rect(60px, 9999px, 48px, 0);
   }
   70% {
-    clip: rect(93px, 9999px, 5px, 0);
+    clip: rect(44px, 9999px, 30px, 0);
   }
   80% {
-    clip: rect(2px, 9999px, 91px, 0);
+    clip: rect(94px, 9999px, 14px, 0);
   }
   90% {
-    clip: rect(96px, 9999px, 40px, 0);
+    clip: rect(5px, 9999px, 96px, 0);
   }
   100% {
-    clip: rect(68px, 9999px, 79px, 0);
+    clip: rect(76px, 9999px, 70px, 0);
   }
 }
 .glitching:after {
@@ -337,7 +337,7 @@ html.has-scroll-dragging {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   opacity: 0.5;
   width: 7px;
   border-radius: 10px;
