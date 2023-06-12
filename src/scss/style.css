@@ -53,11 +53,15 @@ body {
   color: #fff;
   font-family: "MainFontRegular", sans-serif;
   transition: 0.3s ease-out;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
 }
 
 /* Custom cursor */
 body::after {
-  content: "X";
+  content: "";
   position: fixed;
   display: flex;
   justify-content: center;
@@ -142,37 +146,37 @@ canvas {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(47px, 9999px, 97px, 0);
+    clip: rect(79px, 9999px, 41px, 0);
   }
   10% {
-    clip: rect(69px, 9999px, 32px, 0);
+    clip: rect(67px, 9999px, 6px, 0);
   }
   20% {
-    clip: rect(34px, 9999px, 100px, 0);
+    clip: rect(59px, 9999px, 90px, 0);
   }
   30% {
-    clip: rect(61px, 9999px, 9px, 0);
+    clip: rect(93px, 9999px, 56px, 0);
   }
   40% {
-    clip: rect(34px, 9999px, 21px, 0);
+    clip: rect(89px, 9999px, 50px, 0);
   }
   50% {
-    clip: rect(89px, 9999px, 3px, 0);
+    clip: rect(59px, 9999px, 11px, 0);
   }
   60% {
-    clip: rect(62px, 9999px, 40px, 0);
+    clip: rect(8px, 9999px, 31px, 0);
   }
   70% {
-    clip: rect(2px, 9999px, 45px, 0);
+    clip: rect(84px, 9999px, 13px, 0);
   }
   80% {
-    clip: rect(77px, 9999px, 71px, 0);
+    clip: rect(64px, 9999px, 4px, 0);
   }
   90% {
-    clip: rect(94px, 9999px, 59px, 0);
+    clip: rect(21px, 9999px, 83px, 0);
   }
   100% {
-    clip: rect(75px, 9999px, 31px, 0);
+    clip: rect(91px, 9999px, 3px, 0);
   }
 }
 .glitching:after {
@@ -183,7 +187,6 @@ canvas {
   top: 0;
   color: #ffffff;
   background: transparent;
-  overflow: hidden;
   animation: noise-anim 1s infinite linear alternate-reverse;
   width: 100%;
 }
@@ -193,10 +196,10 @@ canvas {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 100;
+  position: fixed;
+  top: 0;
 }
 .flex li {
   text-transform: uppercase;
@@ -215,7 +218,7 @@ canvas {
   height: 2px;
   background-color: #ffffff;
   border-radius: 20px;
-  scale: 0.1;
+  scale: 0;
   transform-origin: right;
   transition: scale 0.25s;
 }
@@ -225,17 +228,123 @@ canvas {
 }
 
 .main-content {
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 100vh;
   align-items: center;
   margin: 20px;
   padding-left: 80px;
 }
 .main-content p {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .main-content .highlight {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-family: "MainFontBold", sans-serif;
+}
+
+.flex-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+  margin-top: 10vh;
+}
+.flex-end .scroll-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
+  width: 120px;
+  height: 40px;
+  line-height: 1;
+  padding: 0.2rem;
+  border: 1px solid #ffffff;
+  border-radius: 40px;
+}
+
+section:not(#sectionPin) {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 50px 10vw;
+  margin: auto;
+  place-items: center;
+}
+
+#sectionPin {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  left: 0;
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.pin-wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 10vw;
+}
+.pin-wrap > * {
+  min-width: 60vw;
+  padding: 0 5vw;
+}
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: grabbing;
 }/*# sourceMappingURL=style.css.map */

@@ -3,10 +3,14 @@ body{
     color: #fff;
     font-family: $fontRegular;
     transition: 0.3s ease-out;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    overscroll-behavior: none;
 }
 /* Custom cursor */
 body::after {
-    content: "X";
+    content: "";
     position: fixed;
     display: flex;
     justify-content: center;
@@ -34,7 +38,6 @@ body::after {
     outline: 2px solid #fff;
     background: $background-color;    
 }
-
 
 /* End custom cursor */
 
@@ -91,7 +94,6 @@ canvas {
 	top: 0;
 	color: $txtColor;
     background: $txtBgColor;
-	overflow: hidden;
 	animation: noise-anim $glitchTime infinite linear alternate-reverse;
 	width: 100%;
 }
@@ -102,10 +104,10 @@ canvas {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 100;
+    position: fixed;
+    top: 0;
     li{
         text-transform: uppercase;
         font-size: 16px;
@@ -123,7 +125,7 @@ canvas {
         height: 2px;
         background-color: $txtColor;
         border-radius: 20px;
-        scale: 0.1;
+        scale: 0;
         transform-origin: right;
         transition: scale 0.25s;
     }
@@ -134,17 +136,72 @@ canvas {
     }
 }
 .main-content{
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 100vh;
     align-items: center;
     margin: 20px;
     padding-left: 80px;
     p{
-        font-size: 2rem;
+        font-size: 3rem;
     }
     .highlight{
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-family: $fontBold;
+    }
+}
+.flex-end{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    margin-top: 10vh;
+    .scroll-down{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.12rem;
+        width: 120px;
+        height: 40px;
+        line-height: 1;
+        padding: 0.2rem;
+        border: 1px solid $txtColor;
+        border-radius: 40px
+      }
+
+}
+
+
+
+section:not(#sectionPin) {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    padding: 50px 10vw;
+    margin: auto;
+    place-items: center;
+  }
+#sectionPin {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+  
+.pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 10vw;
+  
+    & > * {
+      min-width: 60vw;
+      padding: 0 5vw;
     }
 }

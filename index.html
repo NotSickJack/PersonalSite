@@ -12,6 +12,7 @@
   </head>
   <body class="bg-noise">
     <canvas class="arrows"></canvas>
+    <div class="cursor-follower"></div>
     <nav>
       <ul class="flex bg-noise">
         <li><a href="#" class="clickable">Projects</a></li>
@@ -19,24 +20,80 @@
         <li><a href="#" class="clickable">Contact</a></li>
       </ul>
     </nav>
-    <main class="main-content">
-      <div class="container">
-        <p>
-          Hi, I'm
-          <span class="highlight glitching" data-text="GIANLUCA PRODIGO"
-            >GIANLUCA PRODIGO</span
-          >,
-        </p>
-        <p>
-          a
-          <span class="highlight glitching" data-text="Front-End Developer"
-            >Front-End Developer</span
-          >
-          based in
-          <span class="highlight glitching" data-text="Milan">Milan</span>.
-        </p>
-      </div>
-    </main>
+    <div class="container">
+      <main class="main-content">
+        <div>
+          <p>
+            Hi, I'm
+            <span class="highlight glitching" data-text="GIANLUCA"
+              >GIANLUCA
+            </span>
+            <span class="highlight glitching" data-text="PRODIGO">
+              PRODIGO </span
+            >,
+          </p>
+          <p>
+            a
+            <span class="highlight glitching" data-text="Front-End Developer"
+              >Front-End Developer</span
+            >
+            based in
+            <span class="highlight glitching" data-text="Milan">Milan</span>.
+          </p>
+          <div class="flex-end">
+            <div class="scroll-down">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 12H12M12 12V0M12 12L1.26316 1.53846"
+                  stroke="#fff"
+                  stroke-width="2"
+                />
+              </svg>
+              <span>scroll down</span>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </main>
+      <section id="sectionPin">
+        <div class="pin-wrap">
+          <h2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </h2>
+          <img
+            src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+        </div>
+      </section>
+      <section class="main-content"></section>
+    </div>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="src/js/main.js"></script>
   </body>
 </html>
