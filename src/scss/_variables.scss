@@ -1,5 +1,5 @@
 $background-color: #141414;
-$txtColor:#ff1e00;
+$txtColor:#ffffff;
 $txtBgColor:transparent;
 $glitchTime: 1s;
 $glitchSteps:10;
@@ -7,8 +7,8 @@ $glitchColor: darken($txtColor,50%);
 
 @font-face {
     font-family: 'MainFontBold';
-    src: url('/PersonalSite/font/PPNeueMachina-InktrapBold.woff2') format('woff2'),
-        url('/PersonalSite/font/PPNeueMachina-InktrapBold.woff') format('woff');
+    src: url('/font/PPNeueMachina-InktrapBold.woff2') format('woff2'),
+        url('/font/PPNeueMachina-InktrapBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -16,8 +16,8 @@ $glitchColor: darken($txtColor,50%);
 
 @font-face {
     font-family: 'MainFontRegular';
-    src: url('/PersonalSite/font/PPNeueMachina-PlainRegular.woff2') format('woff2'),
-        url('/PersonalSite/font/PPNeueMachina-PlainRegular.woff') format('woff');
+    src: url('/font/PPNeueMachina-PlainRegular.woff2') format('woff2'),
+        url('/font/PPNeueMachina-PlainRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

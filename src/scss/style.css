@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
+}
+* *::after,
+* *::before {
+  box-sizing: border-box;
 }
 
 ul, ol, li {
@@ -31,14 +36,14 @@ input, textarea {
 
 @font-face {
   font-family: "MainFontBold";
-  src: url("/PersonalSite/font/PPNeueMachina-InktrapBold.woff2") format("woff2"), url("/PersonalSite/font/PPNeueMachina-InktrapBold.woff") format("woff");
+  src: url("/font/PPNeueMachina-InktrapBold.woff2") format("woff2"), url("/font/PPNeueMachina-InktrapBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MainFontRegular";
-  src: url("/PersonalSite/font/PPNeueMachina-PlainRegular.woff2") format("woff2"), url("/PersonalSite/font/PPNeueMachina-PlainRegular.woff") format("woff");
+  src: url("/font/PPNeueMachina-PlainRegular.woff2") format("woff2"), url("/font/PPNeueMachina-PlainRegular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -47,69 +52,143 @@ body {
   background-color: #141414;
   color: #fff;
   font-family: "MainFontRegular", sans-serif;
+  transition: 0.3s ease-out;
 }
 
-#canvas {
+/* Custom cursor */
+body::after {
+  content: "X";
   position: fixed;
-  opacity: 0.4;
-  background-color: rgba(255, 255, 255, 0.1019607843);
-  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "MainFontBold", sans-serif;
+  z-index: 999;
+  top: var(--y);
+  left: var(--x);
+  right: 0;
+  bottom: 0;
+  width: 2.5em;
+  height: 2.5em;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: width 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+  font-size: 1.5rem;
+  transform-origin: center;
+}
+
+.img-hovered::after {
+  outline: 2px solid #fff;
+  background: #141414;
+}
+
+/* End custom cursor */
+/* Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* End canvas */
+/* Glitch effect */
+.bg-noise {
+  background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), #141414;
+  background-size: 300px 300px;
+  animation: 250ms steps(10, end) 0s infinite alternate-reverse none running noise-animation;
+}
+@keyframes noise-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  10% {
+    background-position: -5% -5%;
+  }
+  20% {
+    background-position: -10% 5%;
+  }
+  30% {
+    background-position: 5% -10%;
+  }
+  40% {
+    background-position: -5% 15%;
+  }
+  50% {
+    background-position: -10% 5%;
+  }
+  60% {
+    background-position: 5% 5%;
+  }
+  70% {
+    background-position: 0% 10%;
+  }
+  80% {
+    background-position: -5% -5%;
+  }
+  90% {
+    background-position: 10% 5%;
+  }
 }
 
 .glitching {
-  color: #ff1e00;
+  color: #ffffff;
   position: relative;
-  text-shadow: 0 1px black;
+  text-shadow: 0 1px gray;
 }
 
 @keyframes noise-anim {
   0% {
-    clip: rect(73px, 9999px, 35px, 0);
+    clip: rect(47px, 9999px, 97px, 0);
   }
   10% {
-    clip: rect(27px, 9999px, 39px, 0);
+    clip: rect(69px, 9999px, 32px, 0);
   }
   20% {
-    clip: rect(60px, 9999px, 61px, 0);
+    clip: rect(34px, 9999px, 100px, 0);
   }
   30% {
-    clip: rect(54px, 9999px, 72px, 0);
+    clip: rect(61px, 9999px, 9px, 0);
   }
   40% {
-    clip: rect(48px, 9999px, 27px, 0);
+    clip: rect(34px, 9999px, 21px, 0);
   }
   50% {
-    clip: rect(100px, 9999px, 95px, 0);
+    clip: rect(89px, 9999px, 3px, 0);
   }
   60% {
-    clip: rect(21px, 9999px, 7px, 0);
+    clip: rect(62px, 9999px, 40px, 0);
   }
   70% {
-    clip: rect(90px, 9999px, 15px, 0);
+    clip: rect(2px, 9999px, 45px, 0);
   }
   80% {
-    clip: rect(49px, 9999px, 60px, 0);
+    clip: rect(77px, 9999px, 71px, 0);
   }
   90% {
-    clip: rect(76px, 9999px, 77px, 0);
+    clip: rect(94px, 9999px, 59px, 0);
   }
   100% {
-    clip: rect(85px, 9999px, 47px, 0);
+    clip: rect(75px, 9999px, 31px, 0);
   }
 }
 .glitching:after {
   content: attr(data-text);
   position: absolute;
   left: -1px;
-  text-shadow: 1px 0 black;
+  text-shadow: 1px 0 gray;
   top: 0;
-  color: #ff1e00;
+  color: #ffffff;
   background: transparent;
   overflow: hidden;
   animation: noise-anim 1s infinite linear alternate-reverse;
   width: 100%;
 }
 
+/* End glitch effect */
 .flex {
   display: flex;
   justify-content: space-between;
@@ -118,7 +197,6 @@ body {
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: #141414;
 }
 .flex li {
   text-transform: uppercase;
@@ -135,7 +213,7 @@ body {
   bottom: -5px;
   width: 100%;
   height: 2px;
-  background-color: #ff0000;
+  background-color: #ffffff;
   border-radius: 20px;
   scale: 0.1;
   transform-origin: right;
