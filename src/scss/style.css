@@ -122,12 +122,8 @@ canvas {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 10vh;
-  z-index: 100;
   padding: 0 2rem;
 }
 .navbar .fixed a {
@@ -340,6 +336,42 @@ canvas {
     top: 0;
     left: 0;
     pointer-events: none;
+  }
+  .fixed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    z-index: 100;
+    padding: 0 2rem;
+  }
+  .fixed a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "MainFontBold", sans-serif, sans-serif;
+    position: relative;
+  }
+  .fixed a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    scale: 0;
+    transform-origin: right;
+    transition: scale 0.25s;
+  }
+  .fixed a:hover::before {
+    scale: 1;
+    transform-origin: left;
   }
   .container-horizontal {
     width: 95%;
