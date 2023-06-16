@@ -94,14 +94,6 @@ body {
     background: #141414;
   }
 }
-html {
-  scroll-behavior: initial;
-}
-
-body {
-  overflow: hidden;
-}
-
 canvas {
   display: none;
 }
@@ -299,6 +291,12 @@ canvas {
 }
 
 @media (min-width: 768px) {
+  html {
+    scroll-behavior: initial;
+  }
+  body {
+    overflow: hidden;
+  }
   .bg-noise {
     background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), #141414;
     background-size: 300px 300px;
@@ -337,6 +335,7 @@ canvas {
     }
   }
   canvas {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
