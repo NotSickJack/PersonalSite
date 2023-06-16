@@ -433,7 +433,7 @@ canvas {
   }
   #about .container-about .image img {
     width: 80%;
-    height: 80;
+    height: 80%;
   }
   #vertical .container {
     display: grid;
