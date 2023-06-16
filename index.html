@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="src/scss/style.css" />
     <title>Prodigo Gianluca</title>
   </head>
-  <script src="src/js/mail.js"></script>
   <body class="bg-noise">
     <canvas class="arrows"></canvas>
     <header>
@@ -83,18 +82,29 @@
     </section>
     <section id="contact">
       <div class="form">
-        <form onsubmit="sendEmail(); reset(); return false;">
-          <input type="text" id="fullName" placeholder="Your Name" required />
-          <input type="email" id="email_id" placeholder="Email" required />
+        <!-- Make sure you don't change the form action-->
+        <form action="https://api.staticforms.xyz/submit" method="post">
+          <!-- Replace with accesKey sent to your email -->
+          <input
+            type="hidden"
+            name="accessKey"
+            value="655ffe97-2c85-4fb0-a407-46bb6c1d7105"
+          />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="text" name="email" placeholder="Your Email" required />
           <textarea
-            id="message"
-            rows="4"
+            name="message"
             placeholder="How I can help you?"
             required
           ></textarea>
           <div class="center">
-            <button onclick="SendMail()" type="submit">Send</button>
+            <button type="submit">Send</button>
           </div>
+          <input
+            type="hidden"
+            name="redirectTo"
+            value="http://127.0.0.1:5501/index.html"
+          />
         </form>
       </div>
     </section>
@@ -103,15 +113,5 @@
     <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
     <script src="/src/js/scroll.js"></script>
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("GLR3laDq19JitVc2w");
-      })();
-    </script>
   </body>
 </html>

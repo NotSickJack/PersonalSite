@@ -102,10 +102,11 @@ body {
   overflow: hidden;
 }
 
-canvas {
+.canvas {
   position: fixed;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 
 .dots {
@@ -340,6 +341,12 @@ canvas {
 }
 
 @media (min-width: 768px) {
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
   .container-horizontal {
     width: 95%;
     margin: auto;
