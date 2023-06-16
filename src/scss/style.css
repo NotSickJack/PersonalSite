@@ -102,55 +102,14 @@ body {
   overflow: hidden;
 }
 
-.canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+canvas {
+  display: none;
 }
 
 .dots {
   background-color: #1c1b1b;
   background-image: radial-gradient(rgba(255, 255, 255, 0.1490196078) 1px, rgba(0, 0, 0, 0) 0);
   background-size: 32px 32px;
-}
-
-.bg-noise {
-  background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), #141414;
-  background-size: 300px 300px;
-  animation: 250ms steps(10, end) 0s infinite alternate-reverse none running noise-animation;
-}
-@keyframes noise-animation {
-  0% {
-    background-position: 0% 0%;
-  }
-  10% {
-    background-position: -5% -5%;
-  }
-  20% {
-    background-position: -10% 5%;
-  }
-  30% {
-    background-position: 5% -10%;
-  }
-  40% {
-    background-position: -5% 15%;
-  }
-  50% {
-    background-position: -10% 5%;
-  }
-  60% {
-    background-position: 5% 5%;
-  }
-  70% {
-    background-position: 0% 10%;
-  }
-  80% {
-    background-position: -5% -5%;
-  }
-  90% {
-    background-position: 10% 5%;
-  }
 }
 
 .m100 {
@@ -176,7 +135,6 @@ body {
   left: 0;
   width: 100vw;
   height: 10vh;
-  background-color: #141414;
   z-index: 100;
   padding: 0 2rem;
 }
@@ -341,6 +299,43 @@ body {
 }
 
 @media (min-width: 768px) {
+  .bg-noise {
+    background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), #141414;
+    background-size: 300px 300px;
+    animation: 250ms steps(10, end) 0s infinite alternate-reverse none running noise-animation;
+  }
+  @keyframes noise-animation {
+    0% {
+      background-position: 0% 0%;
+    }
+    10% {
+      background-position: -5% -5%;
+    }
+    20% {
+      background-position: -10% 5%;
+    }
+    30% {
+      background-position: 5% -10%;
+    }
+    40% {
+      background-position: -5% 15%;
+    }
+    50% {
+      background-position: -10% 5%;
+    }
+    60% {
+      background-position: 5% 5%;
+    }
+    70% {
+      background-position: 0% 10%;
+    }
+    80% {
+      background-position: -5% -5%;
+    }
+    90% {
+      background-position: 10% 5%;
+    }
+  }
   canvas {
     position: fixed;
     top: 0;
