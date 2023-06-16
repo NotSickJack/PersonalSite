@@ -350,7 +350,11 @@ canvas {
         justify-content: center;
         align-items: center;
         img {
+          transition: all 0.5s ease-in-out;
           width: 80%;
+        }
+        img:hover {
+          filter: grayscale(0%);
         }
       }
     }
