@@ -1,151 +1,362 @@
-body{
-    background-color: $background-color;
-    color: #fff;
-    font-family: $fontRegular;
-    transition: 0.3s ease-out;
-
+html {
+  scroll-behavior: initial;
 }
-/* Custom cursor */
-body::after {
-    content: "X";
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $fontBold;
-    z-index: 999;
-    top: var(--y);
-    left: var(--x);
-    right: 0;
-    bottom: 0;
-    width: 2.5em;
-    height: 2.5em;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: #fff;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    transition: width 0.4s ease-in-out;
-    transition: height 0.4s ease-in-out;
-    font-size: 1.5rem;
-    transform-origin: center
+body {
+  overflow: hidden;
 }
-
-.img-hovered::after{
-    outline: 2px solid #fff;
-    background: $background-color;    
-}
-
-
-/* End custom cursor */
-
-/* Canvas */
 canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+} 
+
+.dots{background-color: #1c1b1b;
+  background-image: radial-gradient(#ffffff26 1px,#0000 0);
+  background-size: 32px 32px;
+}
+// Noise Effect
+.bg-noise {
+  background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), $bg-color;
+  background-size: 300px 300px;
+  animation: 250ms steps(10, end) 0s infinite alternate-reverse none running
+    noise-animation;
+  @keyframes noise-animation {
+    0% {
+      background-position: 0% 0%;
+    }
+    10% {
+      background-position: -5% -5%;
+    }
+    20% {
+      background-position: -10% 5%;
+    }
+    30% {
+      background-position: 5% -10%;
+    }
+    40% {
+      background-position: -5% 15%;
+    }
+    50% {
+      background-position: -10% 5%;
+    }
+    60% {
+      background-position: 5% 5%;
+    }
+    70% {
+      background-position: 0% 10%;
+    }
+    80% {
+      background-position: -5% -5%;
+    }
+    90% {
+      background-position: 10% 5%;
+    }
+  }
+}
+
+// End Noise Effect
+
+.m100 {
+  margin-top: 90px;
+}
+
+.navbar {
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: $bg-color;
+  .fixed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
     position: fixed;
     top: 0;
     left: 0;
-  } 
+    width: 100vw;
+    height: 10vh;
+    background-color: $bg-color;
+    z-index: 100;
+    padding: 0 2rem;
+    a {
+      color: $txtColor;
+      text-transform: uppercase;
+      font-family: $fontBold, sans-serif;
+      position: relative;
+    }
+    a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: $txtColor;
+      border-radius: 20px;
+      scale: 0;
+      transform-origin: right;
+      transition: scale 0.25s;
+    }
+    a:hover::before {
+      scale: 1;
+      transform-origin: left;
+    }
+  }
+}
 
-/* End canvas */
+#vertical {
+  height: 100vh;
+  width: 100%;
+  padding: 0 2rem;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .vertical-content {
+      span {
+        font-size: 1.5rem;
+        color: $txtColor;
+      }
+      h1 {
+        font-size: 1.8rem;
+        color: $txtColor;
+        font-family: $fontBold, sans-serif;
+      }
+      h2 {
+        display: inline;
+        font-size: 1.8rem;
+        color: $txtColor;
+        font-family: $fontBold, sans-serif;
+      }
+    }
+  }
+}
+#horizontal {
+  width: 100%;
+  padding: 0 10px;
+  .horizontal__item {
+    margin-bottom: 20px;
+    border: 1px solid $txtColor;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-/* Glitch effect */
+#about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .container-about {
+    width: 90%;
+  }
+  h2 {
+    font-size: 1.8rem;
+    color: $txtColor;
+    font-family: $fontBold, sans-serif;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+    color: $txtColor;
+    font-family: $fontRegular, sans-serif;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  img {
+    filter: grayscale(100%);
+    border-radius: 20px;
+  }
+  .center {
+    display: none;
+  }
+  .center2 {
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    width: 200px;
+    height: 40px;
+    border: 1px solid $txtColor;
+    background-color: $bg-color;
+    border-radius: 20px;
+    margin-top: 1rem;
+    a {
+      color: $txtColor;
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: $fontBold, sans-serif;
+    }
+  }
+  button:hover {
+    background-color: $txtColor;
+    a {
+      color: $bg-color;
+    }
+  }
+}
 
-.bg-noise {
-    // Simple class to reuse wherever you want to make some noise.
-    background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), $background-color;
-    background-size: 300px 300px;
-    animation: 250ms steps(10, end) 0s infinite alternate-reverse none running noise-animation;
-    @keyframes noise-animation {
-      0% { background-position: 0% 0%; }
-      10% { background-position: -5% -5%; }
-      20% { background-position: -10% 5%; }
-      30% { background-position: 5% -10%; }
-      40% { background-position: -5% 15%; }
-      50% { background-position: -10% 5%; }
-      60% { background-position: 5% 5%; }
-      70% { background-position: 0% 10%; }
-      80% { background-position: -5% -5%; }
-      90% { background-position: 10% 5%; }
+#contact {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  form {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 2rem;
+    input,
+    textarea {
+      border: 0;
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 2px solid $txtColor;
+      border-radius: 20px;
+      background-color: $bg-color;
+      color: $txtColor;
+      font-size: 1rem;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      width: 100px;
+      height: 40px;
+      background-color: $txtColor;
+      border-radius: 20px;
+      margin-top: 1rem;
+      text-align: center;
+      color: $bg-color;
+      font-family: $fontBold, sans-serif;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container-horizontal {
+    width: 95%;
+    margin: auto;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  #vertical {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .vertical__content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+  }
+
+  .vertical__content .col_left {
+    height: 100%;
+  }
+
+  .vertical__content .col.col_right {
+    width: 100%;
+  }
+
+  .vertical__item:not(:last-child) {
+    margin-bottom: 240px;
+  }
+
+  #horizontal {
+    width: 400vw;
+    padding: 100px;
+    .horizontal__item {
+      border: none;
+    }
+    img{
+      border: 2px solid $txtColor;
+      border-radius: 20px;
     }
   }
 
-.glitching {
-
-	color: $txtColor;
-	position: relative; 
-	text-shadow: 0 1px $glitchColor;
-}
-
-@keyframes noise-anim {
-	@for $i from 0 through $glitchSteps {
-		#{percentage($i*(1/$glitchSteps))} {
-			clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-		}
-	}
-}
-
-.glitching:after {
-	content: attr(data-text);
-	position: absolute;
-	left: -1px;
-	text-shadow: 1px 0  $glitchColor;
-	top: 0;
-	color: $txtColor;
-    background: $txtBgColor;
-	overflow: hidden;
-	animation: noise-anim $glitchTime infinite linear alternate-reverse;
-	width: 100%;
-}
-
-/* End glitch effect */
-
-.flex{
+  .horizontal__content {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    li{
-        text-transform: uppercase;
-        font-size: 16px;
-    }
-    a{
-        position: relative;
-        font-family: $fontBold;
-        }
-    a::before{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 100%;
-        height: 2px;
-        background-color: $txtColor;
-        border-radius: 20px;
-        scale: 0.1;
-        transform-origin: right;
-        transition: scale 0.25s;
-    }
-    a:hover::before{
-        scale: 1;
-        transform-origin: left;
+  }
 
+  .horizontal__item:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  #about {
+    .container-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 20px;
+        p,
+        h2 {
+          text-align: left;
+        }
+        .center {
+          display: block;
+        }
+      }
+      .image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 80%;
+          height: 80;
+        }
+      }
     }
-}
-.main-content{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 100vh;
-    align-items: center;
-    margin: 20px;
-    padding-left: 80px;
-    p{
-        font-size: 2rem;
+    .center2 {
+      display: none;
     }
-    .highlight{
-    font-size: 2.5rem;
-    font-family: $fontBold;
+  }
+  #vertical {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .vertical-content {
+        span {
+          font-size: 2.5rem;
+        }
+        h1 {
+          font-size: 2.8rem;
+        }
+        h2 {
+          display: block;
+          font-size: 2.8rem;
+        }
+      }
+      .ball {
+        width: 100%;
+        height: 100%;
+      }
     }
+  }
+  #contact {
+    form {
+      width: 50vw;
+      justify-content: center;
+    }
+  }
 }

@@ -1,0 +1,33 @@
+@import "variables";
+
+@media (min-width: 768px) {
+  body::after {
+    content: "";
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $fontBold;
+    z-index: 999;
+    top: var(--y);
+    left: var(--x);
+    right: 0;
+    bottom: 0;
+    width: 2.5em;
+    height: 2.5em;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
+    font-size: 1rem;
+    transform-origin: center;
+  }
+
+  .img-hovered::after {
+    outline: 2px solid #fff;
+    background: $bg-color;
+  }
+}

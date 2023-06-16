@@ -1,20 +1,18 @@
-document.onmousemove = function(e) {
-    document.body.style.setProperty("--x", e.clientX + "px");
-    document.body.style.setProperty("--y", e.clientY + "px");
-  };
-  
-  // hover effect
-  const clickableElements = document.querySelectorAll(".clickable");
-  clickableElements.forEach(elm => {
-    elm.addEventListener("mouseover", function() {
-      document.body.classList.add("img-hovered");
-    });
-    elm.addEventListener("mouseleave", function() {
-      document.body.classList.remove("img-hovered");
-    });
+document.onmousemove = function (e) {
+  document.body.style.setProperty("--x", e.clientX + "px");
+  document.body.style.setProperty("--y", e.clientY + "px");
+};
+
+// hover effect
+const clickableElements = document.querySelectorAll(".clickable");
+clickableElements.forEach((elm) => {
+  elm.addEventListener("mouseover", function () {
+    document.body.classList.add("img-hovered");
   });
-  
-  //click effect
+  elm.addEventListener("mouseleave", function () {
+    document.body.classList.remove("img-hovered");
+  });
+});
 
 var canvas = document.querySelector('.arrows');
 var ctx = canvas.getContext('2d');
@@ -66,7 +64,7 @@ function Arrow(position) {
     ctx.moveTo(30, 0);
     ctx.lineTo(5, 30);
     ctx.lineWidth = 2;
-    var alpha = 1-(this.dist/175);
+    var alpha = 1-(this.dist / 200);
     ctx.strokeStyle = "rgba(255, 255, 255, "+ Math.max(0, alpha) +")";
     ctx.stroke();
     

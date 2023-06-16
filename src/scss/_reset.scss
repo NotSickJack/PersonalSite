@@ -1,26 +1,25 @@
+@import 'variables';
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $fontRegular, sans-serif;
     cursor: none;
 }
-ul, ol, li {
-    list-style: none;
+ul{
+    li{
+        list-style: none;
+    }
 }
-a {
+a{
     text-decoration: none;
-    color: inherit;
 }
-img {
-    max-width: 100%;
-    height: auto;
+img{
+    width: 100%;
 }
-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-input, textarea {
-    border: none;
-    outline: none;
+
+body{
+    background-color: $bg-color;
 }
