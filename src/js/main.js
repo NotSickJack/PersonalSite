@@ -1,20 +1,18 @@
-document.onmousemove = function(e) {
-    document.body.style.setProperty("--x", e.clientX + "px");
-    document.body.style.setProperty("--y", e.clientY + "px");
-  };
-  
-  // hover effect
-  const clickableElements = document.querySelectorAll(".clickable");
-  clickableElements.forEach(elm => {
-    elm.addEventListener("mouseover", function() {
-      document.body.classList.add("img-hovered");
-    });
-    elm.addEventListener("mouseleave", function() {
-      document.body.classList.remove("img-hovered");
-    });
+document.onmousemove = function (e) {
+  document.body.style.setProperty("--x", e.clientX + "px");
+  document.body.style.setProperty("--y", e.clientY + "px");
+};
+
+// hover effect
+const clickableElements = document.querySelectorAll(".clickable");
+clickableElements.forEach((elm) => {
+  elm.addEventListener("mouseover", function () {
+    document.body.classList.add("img-hovered");
   });
-  
-  //click effect
+  elm.addEventListener("mouseleave", function () {
+    document.body.classList.remove("img-hovered");
+  });
+});
 
 var canvas = document.querySelector('.arrows');
 var ctx = canvas.getContext('2d');
@@ -66,7 +64,7 @@ function Arrow(position) {
     ctx.moveTo(30, 0);
     ctx.lineTo(5, 30);
     ctx.lineWidth = 2;
-    var alpha = 1-(this.dist/180);
+    var alpha = 1-(this.dist / 200);
     ctx.strokeStyle = "rgba(255, 255, 255, "+ Math.max(0, alpha) +")";
     ctx.stroke();
     
@@ -98,63 +96,3 @@ function main() {
   }
   requestAnimationFrame(main);
 }
-
-gsap.registerPlugin(ScrollTrigger);
-
-const pageContainer = document.querySelector(".container");
-
-/* SMOOTH SCROLL */
-const scroller = new LocomotiveScroll({
-  el: pageContainer,
-  smooth: true
-});
-
-scroller.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy(pageContainer, {
-  scrollTop(value) {
-    return arguments.length
-      ? scroller.scrollTo(value, 0, 0)
-      : scroller.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      left: 0,
-      top: 0,
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-  },
-  pinType: pageContainer.style.transform ? "transform" : "fixed"
-});
-
-////////////////////////////////////
-////////////////////////////////////
-window.addEventListener("load", function () {
-  let pinBoxes = document.querySelectorAll(".pin-wrap > *");
-  let pinWrap = document.querySelector(".pin-wrap");
-  let pinWrapWidth = pinWrap.offsetWidth;
-  let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-
-  // Pinning and horizontal scrolling
-
-  gsap.to(".pin-wrap", {
-    scrollTrigger: {
-      scroller: pageContainer, //locomotive-scroll
-      scrub: true,
-      trigger: "#sectionPin",
-      pin: true,
-      anticipatePin: 1,
-      start: "top top",
-      end: pinWrapWidth
-    },
-    x: -horizontalScrollLength,
-    ease: "none"
-  });
-
-  ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
-
-  ScrollTrigger.refresh();
-});
-
-ScrollTrigger.refresh();
