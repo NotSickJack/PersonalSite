@@ -124,7 +124,6 @@ canvas {
   gap: 2rem;
   width: 100vw;
   height: 10vh;
-  padding: 0 2rem;
 }
 .navbar .fixed a {
   color: #ffffff;
