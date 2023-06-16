@@ -1,3 +1,3 @@
 # PersonalSite
 
-# Online at gianlucaprodigo.com
+# Online at http://gianlucaprodigo.com/
