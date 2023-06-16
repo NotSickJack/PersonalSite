@@ -221,13 +221,6 @@ canvas {
   filter: grayscale(100%);
   border-radius: 20px;
 }
-#about .center {
-  display: none;
-}
-#about .center2 {
-  display: flex;
-  justify-content: center;
-}
 #about button {
   width: 200px;
   height: 40px;
@@ -431,9 +424,6 @@ canvas {
   #about .container-about .about-text h2 {
     text-align: left;
   }
-  #about .container-about .about-text .center {
-    display: block;
-  }
   #about .container-about .image {
     width: 100%;
     height: 100%;
@@ -444,9 +434,6 @@ canvas {
   #about .container-about .image img {
     width: 80%;
     height: 80;
-  }
-  #about .center2 {
-    display: none;
   }
   #vertical .container {
     display: grid;

@@ -127,13 +127,6 @@ canvas {
     filter: grayscale(100%);
     border-radius: 20px;
   }
-  .center {
-    display: none;
-  }
-  .center2 {
-    display: flex;
-    justify-content: center;
-  }
   button {
     width: 200px;
     height: 40px;
@@ -349,9 +342,6 @@ canvas {
         h2 {
           text-align: left;
         }
-        .center {
-          display: block;
-        }
       }
       .image {
         width: 100%;
@@ -364,9 +354,6 @@ canvas {
           height: 80;
         }
       }
-    }
-    .center2 {
-      display: none;
     }
   }
   #vertical {
