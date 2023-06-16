@@ -15,7 +15,6 @@ canvas {
 }
 
 .navbar {
-  padding: 0 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,6 +22,7 @@ canvas {
   height: 100%;
   background-color: $bg-color;
   .fixed {
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,7 +56,7 @@ canvas {
 }
 
 #vertical {
-  height: 100vh;
+  height: 70vh;
   width: 100%;
   padding: 0 2rem;
   .container {
@@ -82,6 +82,9 @@ canvas {
         font-family: $fontBold, sans-serif;
       }
     }
+  }
+  .ball{
+    display: none;
   }
 }
 #horizontal {
