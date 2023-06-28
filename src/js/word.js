@@ -74,6 +74,9 @@ let m = new THREE.PointsMaterial({
       `#include <color_vertex>
         float grayscale = (abs(position.x) + abs(position.y) + abs(position.z)) / 90.0;
         vColor = vec3(grayscale, grayscale, grayscale);
+        if (length(position) < 10.0) {
+          vColor = vec3(1.0, 1.0, 1.0); // Imposta il colore bianco per la palla al centro
+        }
       `
     ).replace(
       `#include <begin_vertex>`,
