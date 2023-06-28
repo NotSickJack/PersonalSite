@@ -34,18 +34,18 @@ let pushShift = () => {
   );
 };
 
-let pts = new Array(50000).fill().map(p => {
+let pts = new Array(40000).fill().map(p => {
   sizes.push(Math.random() * 1.5 + 0.5);
   pushShift();
   return new THREE.Vector3().randomDirection().multiplyScalar(Math.random() * 0.5 + 9.5);
 });
 
-for (let i = 0; i < 100000; i++) {
+for (let i = 0; i < 30000; i++) {
   let r = 10, R = 40;
   let rand = Math.pow(Math.random(), 1.5);
   let radius = Math.sqrt(R * R * rand + (1 - rand) * r * r);
   pts.push(new THREE.Vector3().setFromCylindricalCoords(radius, Math.random() * 2 * Math.PI, (Math.random() - 0.5) * 2));
-  sizes.push(Math.random() * 1.5 + 0.5);
+  sizes.push(Math.random() * 1 + 0.5);
   pushShift();
 }
 
