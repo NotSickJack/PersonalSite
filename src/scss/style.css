@@ -94,7 +94,7 @@ body {
     background: #141414;
   }
 }
-canvas {
+#word {
   display: none;
 }
 
@@ -153,6 +153,7 @@ canvas {
   height: 80vh;
   width: 100%;
   padding: 0 2rem;
+  z-index: 100;
 }
 #vertical .container {
   display: grid;
@@ -203,6 +204,9 @@ canvas {
 #about .container-about {
   width: 90%;
 }
+#about .about-text {
+  z-index: 100;
+}
 #about h2 {
   font-size: 1.8rem;
   color: #ffffff;
@@ -248,6 +252,9 @@ canvas {
   justify-content: center;
   align-items: center;
 }
+#contact .form {
+  z-index: 100;
+}
 #contact form {
   width: 90vw;
   display: flex;
@@ -287,6 +294,9 @@ canvas {
   }
   body {
     overflow: hidden;
+  }
+  #word {
+    display: block;
   }
   .bg-noise {
     background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), #141414;
@@ -422,6 +432,11 @@ canvas {
   }
   #about .container-about .about-text p,
   #about .container-about .about-text h2 {
+    margin-bottom: 10px;
+    border: #ffffff 1px solid;
+    padding: 10px;
+    border-radius: 20px;
+    background: #141414;
     text-align: left;
   }
   #about .container-about .image {
@@ -433,7 +448,7 @@ canvas {
   }
   #about .container-about .image img {
     transition: all 0.5s ease-in-out;
-    width: 80%;
+    width: 60%;
   }
   #about .container-about .image img:hover {
     filter: grayscale(0%);

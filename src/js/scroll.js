@@ -14,16 +14,11 @@ const lenis = new Lenis({
   const section_1 = document.getElementById("vertical");
   const col_left = document.querySelector(".col_left");
   const timeln = gsap.timeline({ paused: true });
-
   const mediaQuery = window.matchMedia("(max-width: 900px)");
 
   
   if (mediaQuery.matches) {
-    // Codice per dispositivi mobili
-    // Non eseguire la funzione
   } else {
-    // Codice per desktop
-    // Esegui la funzione
     timeln.fromTo(col_left, { y: 0 }, { y: '30vh', duration: 2, ease: 'yes' }, 0);
   }  
   ScrollTrigger.config({ 

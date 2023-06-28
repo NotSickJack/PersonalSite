@@ -1,7 +1,6 @@
-canvas {
+#word {
   display: none;
-} 
-
+}
 .dots{background-color: #1c1b1b;
   background-image: radial-gradient(#ffffff26 1px,#0000 0);
   background-size: 32px 32px;
@@ -59,6 +58,7 @@ canvas {
   height: 80vh;
   width: 100%;
   padding: 0 2rem;
+  z-index: 100;
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -109,6 +109,9 @@ canvas {
   .container-about {
     width: 90%;
   }
+  .about-text{
+    z-index: 100;  
+  }
   h2 {
     font-size: 1.8rem;
     color: $txtColor;
@@ -154,6 +157,9 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  .form{
+  z-index: 100;
+  }
   form {
     width: 90vw;
     display: flex;
@@ -194,6 +200,9 @@ canvas {
   }
   body {
     overflow: hidden;
+  }
+  #word{
+    display: block;
   }
   .bg-noise {
     background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), $bg-color;
@@ -340,6 +349,11 @@ canvas {
         padding-right: 20px;
         p,
         h2 {
+          margin-bottom: 10px;
+          border: $txtColor 1px solid;
+          padding: 10px;
+          border-radius: 20px;
+          background: $bg-color;
           text-align: left;
         }
       }
@@ -351,7 +365,7 @@ canvas {
         align-items: center;
         img {
           transition: all 0.5s ease-in-out;
-          width: 80%;
+          width: 60%;
         }
         img:hover {
           filter: grayscale(0%);
