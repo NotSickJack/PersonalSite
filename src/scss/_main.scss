@@ -110,7 +110,7 @@
     width: 90%;
   }
   .about-text{
-    z-index: 100;  
+    z-index: 10;  
   }
   h2 {
     font-size: 1.8rem;
@@ -323,10 +323,29 @@
     padding: 100px;
     .horizontal__item {
       border: none;
+
     }
     img{
       border: 2px solid $txtColor;
       border-radius: 20px;
+      width: 75vw;
+      height: 75vh;
+      object-fit: cover;
+    }
+    .description{
+      display: flex;
+      padding: 0 2rem;
+      justify-content: space-between;
+      h3{
+        font-size: 2.5rem;
+        color: $txtColor;
+        font-family: $fontBold, sans-serif;
+      }
+      h4{
+        font-size: 2.5rem;
+        color: $txtColor;
+        font-family: $fontBold, sans-serif;
+      }
     }
   }
 

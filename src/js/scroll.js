@@ -48,7 +48,6 @@ const lenis = new Lenis({
         trigger: section_2,
         pin: true,
         scrub: 1,
-        snap: 1 / (box_items.length - 1),
         end: "+=" + section_2.offsetWidth
       }
     });
