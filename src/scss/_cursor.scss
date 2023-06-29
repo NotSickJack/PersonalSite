@@ -20,14 +20,18 @@
     background: #fff;
     mix-blend-mode: difference;
     pointer-events: none;
-    transition: width 0.4s ease-in-out;
-    transition: height 0.4s ease-in-out;
+    transition: width 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
     font-size: 1rem;
     transform-origin: center;
   }
 
   .img-hovered::after {
-    outline: 2px solid #fff;
-    background: $bg-color;
+    outline: 2px solid $bg-color;
+    background: $txtColor;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
   }
 }
