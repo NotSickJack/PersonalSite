@@ -44,7 +44,6 @@
   width: 0%;
 }
 canvas {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -144,6 +143,7 @@ canvas {
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
+    background: $bg-color;
     h3{
       font-size: 1.5rem;
       color: $txtColor;
@@ -172,6 +172,11 @@ canvas {
     font-family: $fontBold, sans-serif;
     padding-bottom: 1rem;
     text-align: center;
+    background: $bg-color;
+    border-radius: 20px;
+    border: 1px solid $txtColor;
+    margin-bottom: 1rem;
+    padding: 1rem;
   }
   p {
     font-size: 1rem;
@@ -179,6 +184,11 @@ canvas {
     font-family: $fontRegular, sans-serif;
     padding-bottom: 1rem;
     text-align: center;
+    background-color: $bg-color;
+    border-radius: 20px;
+    border: 1px solid $txtColor;
+    margin-bottom: 2rem;
+    padding: 1rem;
   }
   img {
     filter: grayscale(100%);
