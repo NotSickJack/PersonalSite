@@ -6,7 +6,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: $fontRegular, sans-serif;
-    cursor: none;
 }
 ul{
     li{
@@ -22,4 +21,6 @@ img{
 
 body{
     background-color: $bg-color;
+    cursor: none;
+
 }
