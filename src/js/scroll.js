@@ -48,13 +48,14 @@ window.onload = function () {
   loader();
 };
 
-
 welcomeScreen.to(".loading-screen", {
-  duration: 0.8,
+  duration: 2,
   y: -2000,
   ease: "Power4.out",
   delay: 0.4,
 });
+
+
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
