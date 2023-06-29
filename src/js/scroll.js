@@ -72,7 +72,7 @@ requestAnimationFrame(raf);
 const section_1 = document.getElementById("vertical");
 const col_left = document.querySelector(".col_left");
 const timeln = gsap.timeline({ paused: true });
-const mediaQuery = window.matchMedia("(max-width: 900px)");
+const mediaQuery = window.matchMedia("(max-width: 768px)");
 
 if (mediaQuery.matches) {
 } else {
